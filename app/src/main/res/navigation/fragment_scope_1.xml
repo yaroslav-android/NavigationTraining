@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_scope_1"
+    app:startDestination="@id/feature_one">
+    
+    <fragment
+        android:id="@+id/feature_one"
+        android:name="team.uptech.training.navigation.feature_one.FeatureOneFragment"
+        android:label="fragment_feature_one"
+        tools:layout="@layout/fragment_feature_one">
+        <action
+            android:id="@+id/action_fragment_scope_1_to_feature_one_detail"
+            app:destination="@+id/feature_one_detail" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/feature_one_detail"
+        android:name="team.uptech.training.navigation.feature_one.FeatureOneDetailFragment"
+        android:label="fragment_feature_one_detail"
+        tools:layout="@layout/fragment_feature_one_detail" />
+</navigation>
