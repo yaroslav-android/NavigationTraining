@@ -1,4 +1,4 @@
-package team.uptech.training.navigation.utils
+package team.uptech.training.navigation.utils.extensions
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
