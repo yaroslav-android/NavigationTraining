@@ -1,4 +1,4 @@
-package team.uptech.training.navigation.feature_one
+package team.uptech.training.navigation.presentation.feature_one
 
 import team.uptech.training.navigation.core.BaseFragment
 import team.uptech.training.navigation.databinding.FragmentFeatureOneDetailBinding

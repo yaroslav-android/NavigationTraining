@@ -7,7 +7,7 @@
     
     <fragment
         android:id="@+id/feature_two"
-        android:name="team.uptech.training.navigation.feature_two.FeatureTwoFragment"
+        android:name="team.uptech.training.navigation.presentation.feature_two.FeatureTwoFragment"
         android:label="fragment_feature_two"
         tools:layout="@layout/fragment_feature_two">
         <action
@@ -17,7 +17,7 @@
     
     <fragment
         android:id="@+id/feature_two_detail"
-        android:name="team.uptech.training.navigation.feature_two.FeatureTwoDetailFragment"
+        android:name="team.uptech.training.navigation.presentation.feature_two.FeatureTwoDetailFragment"
         android:label="fragment_feature_two_detail"
         tools:layout="@layout/fragment_feature_two_detail" />
 </navigation>

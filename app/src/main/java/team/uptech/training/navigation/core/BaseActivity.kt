@@ -8,7 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import team.uptech.training.navigation.R
-import team.uptech.training.navigation.utils.findNavFragment
+import team.uptech.training.navigation.utils.extensions.findNavFragment
 import java.lang.reflect.ParameterizedType
 
 

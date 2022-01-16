@@ -9,6 +9,9 @@ plugins {
 apply from: '../versions.gradle'
 
 android {
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     compileSdk 31
 
     defaultConfig {
@@ -21,6 +24,9 @@ android {
         versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_KEY", "\"${localProperties["API_KEY"]}\""
+        buildConfigField "String", "BASE_URL", "\"https://dummyapi.io/data/v1/\""
     }
 
     buildTypes {
@@ -54,10 +60,15 @@ dependencies {
     implementation navigation.values()
 
     implementation retrofit
-    implementation moshi
+    implementation moshi.values()
 
     implementation di.dagger
     kapt di.dagger_compiler
+
+    implementation epoxy.list
+    kapt epoxy.processor
+
+    implementation coil
 
     testImplementation test
     androidTestImplementation android_test.values()

@@ -1,4 +1,4 @@
-package team.uptech.training.navigation.feature_one
+package team.uptech.training.navigation.presentation.feature_one
 
 import android.os.Bundle
 import android.view.View
