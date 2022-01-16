@@ -1,9 +1,9 @@
-package team.uptech.training.navigation.data.repository.tag
+package team.uptech.training.navigation.data.source.tag
 
 import kotlinx.coroutines.flow.Flow
 import team.uptech.training.navigation.domain.model.PagedList
 
 
-interface TagRepository {
+interface TagRemoteDataSource {
   fun getTags(): Flow<PagedList<String>>
 }
