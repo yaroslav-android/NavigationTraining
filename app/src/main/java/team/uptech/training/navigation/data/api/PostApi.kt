@@ -15,7 +15,7 @@ interface PostApi {
   @GET("user/{id}/post")
   suspend fun getPostsByUser(@Path("id") id: String): DataList<PostPreviewNetwork>
 
-  @GET("user/{id}/tag")
+  @GET("/tag/{tag}/post")
   suspend fun getPostsByTag(@Path("tag") tag: String): DataList<PostPreviewNetwork>
 
   @GET("post/{id}")
