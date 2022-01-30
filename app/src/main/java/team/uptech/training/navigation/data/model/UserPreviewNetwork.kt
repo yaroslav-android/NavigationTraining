@@ -3,7 +3,7 @@ package team.uptech.training.navigation.data.model
 import com.squareup.moshi.Json
 
 
-data class UserPreview(
+data class UserPreviewNetwork(
   @field:Json(name = "id")
   val id: String,
   @field:Json(name = "title")

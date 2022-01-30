@@ -3,7 +3,7 @@ package team.uptech.training.navigation.data.model
 import com.squareup.moshi.Json
 
 
-data class PostPreview(
+data class PostPreviewNetwork(
   @field:Json(name = "id")
   val id: String,
   @field:Json(name = "text")
@@ -17,5 +17,5 @@ data class PostPreview(
   @field:Json(name = "publishDate")
   val publishDate: String,
   @field:Json(name = "owner")
-  val owner: UserPreview
+  val owner: UserPreviewNetwork
 )

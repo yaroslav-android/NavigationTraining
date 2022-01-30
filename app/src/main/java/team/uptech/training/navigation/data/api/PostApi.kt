@@ -2,36 +2,36 @@ package team.uptech.training.navigation.data.api
 
 import retrofit2.http.*
 import team.uptech.training.navigation.data.model.DataList
-import team.uptech.training.navigation.data.model.NewPost
-import team.uptech.training.navigation.data.model.Post
-import team.uptech.training.navigation.data.model.PostPreview
+import team.uptech.training.navigation.data.model.NewPostNetwork
+import team.uptech.training.navigation.data.model.PostNetwork
+import team.uptech.training.navigation.data.model.PostPreviewNetwork
 
 
 interface PostApi {
 
   @GET("post")
- suspend fun getPosts(): DataList<PostPreview>
+ suspend fun getPosts(): DataList<PostPreviewNetwork>
 
   @GET("user/{id}/post")
-  suspend fun getPostsByUser(@Path("id") id: String): DataList<PostPreview>
+  suspend fun getPostsByUser(@Path("id") id: String): DataList<PostPreviewNetwork>
 
   @GET("user/{id}/tag")
-  suspend fun getPostsByTag(@Path("tag") tag: String): DataList<PostPreview>
+  suspend fun getPostsByTag(@Path("tag") tag: String): DataList<PostPreviewNetwork>
 
   @GET("post/{id}")
-  suspend fun getPost(@Path("id") id: String): Post
+  suspend fun getPost(@Path("id") id: String): PostNetwork
 
   @POST("post/create")
-  suspend fun createPost(post: NewPost): Post
+  suspend fun createPost(post: NewPostNetwork): PostNetwork
 
   /**
    * owner is forbidden for update.
    */
   @PUT("post/{id}")
-  suspend fun updatePost(@Path("id") id: String, post: Post): Post
+  suspend fun updatePost(@Path("id") id: String, post: PostNetwork): PostNetwork
 
   /**
-   * return id of deleted [Post].
+   * return id of deleted [PostNetwork].
    */
   @DELETE("post/{id}")
   suspend fun deletePost(@Path("id") id: String): String

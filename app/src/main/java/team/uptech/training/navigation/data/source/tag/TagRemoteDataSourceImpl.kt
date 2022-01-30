@@ -16,8 +16,8 @@ class TagRemoteDataSourceImpl(
 
   override fun getTags(): Flow<PagedList<String>> {
     return flow {
-      val request = TagDataToDomainMapper.mapper.map(api.getTags())
-      emit(request)
+      val response = TagDataToDomainMapper.mapper.map(api.getTags())
+      emit(response)
     }.flowOn(ioDispatcher)
   }
 }
