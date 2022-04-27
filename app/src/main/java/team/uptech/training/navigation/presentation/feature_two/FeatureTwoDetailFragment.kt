@@ -1,7 +1,10 @@
 package team.uptech.training.navigation.presentation.feature_two
 
-import team.uptech.training.navigation.core.BaseFragment
+import androidx.fragment.app.Fragment
 import team.uptech.training.navigation.databinding.FragmentFeatureTwoDetailBinding
+import team.uptech.training.navigation.utils.extensions.viewBinding
 
 
-class FeatureTwoDetailFragment : BaseFragment<FragmentFeatureTwoDetailBinding>()
+class FeatureTwoDetailFragment : Fragment() {
+  private val binding: FragmentFeatureTwoDetailBinding by viewBinding(FragmentFeatureTwoDetailBinding::bind)
+}

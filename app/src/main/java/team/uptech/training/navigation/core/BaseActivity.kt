@@ -2,20 +2,14 @@ package team.uptech.training.navigation.core
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.viewbinding.ViewBinding
 import team.uptech.training.navigation.R
 import team.uptech.training.navigation.utils.extensions.findNavFragment
-import java.lang.reflect.ParameterizedType
 
 
-abstract class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
-
-  private var _binding: Binding? = null
-  protected val binding get() = _binding!!
+abstract class BaseActivity : AppCompatActivity() {
 
   private var _navHostFragment: NavHostFragment? = null
   protected val navHostFragment get() = _navHostFragment!!
@@ -25,9 +19,6 @@ abstract class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    _binding = createBindingInstance(layoutInflater)
-    setContentView(binding.root)
-
     initArtifacts()
   }
 
@@ -46,19 +37,8 @@ abstract class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
   }
 
   override fun onDestroy() {
-    _binding = null
     _navHostFragment = null
     _navController = null
     super.onDestroy()
-  }
-
-  @Suppress("UNCHECKED_CAST")
-  private fun createBindingInstance(inflater: LayoutInflater): Binding {
-    val vbType = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0]
-    val vbClass = vbType as Class<Binding>
-
-    val method = vbClass.getMethod("inflate", LayoutInflater::class.java)
-
-    return method.invoke(null, inflater) as Binding
   }
 }
