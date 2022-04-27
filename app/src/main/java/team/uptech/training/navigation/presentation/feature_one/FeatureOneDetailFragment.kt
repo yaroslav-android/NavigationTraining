@@ -1,7 +1,10 @@
 package team.uptech.training.navigation.presentation.feature_one
 
-import team.uptech.training.navigation.core.BaseFragment
+import androidx.fragment.app.Fragment
 import team.uptech.training.navigation.databinding.FragmentFeatureOneDetailBinding
+import team.uptech.training.navigation.utils.extensions.viewBinding
 
 
-class FeatureOneDetailFragment : BaseFragment<FragmentFeatureOneDetailBinding>()
+class FeatureOneDetailFragment : Fragment() {
+  private val binding: FragmentFeatureOneDetailBinding by viewBinding(FragmentFeatureOneDetailBinding::bind)
+}
