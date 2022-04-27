@@ -3,7 +3,7 @@ package team.uptech.training.navigation.data.model
 import com.squareup.moshi.Json
 
 
-data class User(
+data class UserNetwork(
   @field:Json(name = "id")
   val id: String,
   @field:Json(name = "title")
@@ -25,5 +25,5 @@ data class User(
   @field:Json(name = "picture")
   val picture: String?,
   @field:Json(name = "location")
-  val location: Location?
+  val location: LocationNetwork?
 )

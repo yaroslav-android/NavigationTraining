@@ -3,7 +3,7 @@ package team.uptech.training.navigation.data.model
 import com.squareup.moshi.Json
 
 
-data class Location(
+data class LocationNetwork(
   @field:Json(name = "street")
   val street: String?,
   @field:Json(name = "city")
@@ -13,5 +13,5 @@ data class Location(
   @field:Json(name = "country")
   val country: String?,
   @field:Json(name = "timezone")
-  val timezone: String?,
+  val timezone: String?
 )

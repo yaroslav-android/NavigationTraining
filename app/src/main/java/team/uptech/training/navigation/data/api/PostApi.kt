@@ -1,39 +1,38 @@
 package team.uptech.training.navigation.data.api
 
-import kotlinx.coroutines.flow.Flow
 import retrofit2.http.*
 import team.uptech.training.navigation.data.model.DataList
-import team.uptech.training.navigation.data.model.NewPost
-import team.uptech.training.navigation.data.model.Post
-import team.uptech.training.navigation.data.model.PostPreview
+import team.uptech.training.navigation.data.model.NewPostNetwork
+import team.uptech.training.navigation.data.model.PostNetwork
+import team.uptech.training.navigation.data.model.PostPreviewNetwork
 
 
 interface PostApi {
 
   @GET("post")
-  fun getPosts(): Flow<DataList<PostPreview>>
+ suspend fun getPosts(): DataList<PostPreviewNetwork>
 
   @GET("user/{id}/post")
-  fun getPostsByUser(@Path("id") id: String): Flow<DataList<PostPreview>>
+  suspend fun getPostsByUser(@Path("id") id: String): DataList<PostPreviewNetwork>
 
-  @GET("user/{id}/tag")
-  fun getPostsByTag(@Path("tag") tag: String): Flow<DataList<PostPreview>>
+  @GET("/tag/{tag}/post")
+  suspend fun getPostsByTag(@Path("tag") tag: String): DataList<PostPreviewNetwork>
 
   @GET("post/{id}")
-  fun getPost(@Path("id") id: String): Flow<Post>
+  suspend fun getPost(@Path("id") id: String): PostNetwork
 
   @POST("post/create")
-  fun createPost(post: NewPost): Flow<Post>
+  suspend fun createPost(post: NewPostNetwork): PostNetwork
 
   /**
    * owner is forbidden for update.
    */
   @PUT("post/{id}")
-  fun updatePost(@Path("id") id: String, post: Post): Flow<Post>
+  suspend fun updatePost(@Path("id") id: String, post: PostNetwork): PostNetwork
 
   /**
-   * return id of deleted [Post].
+   * return id of deleted [PostNetwork].
    */
   @DELETE("post/{id}")
-  fun deletePost(@Path("id") id: String): Flow<String>
+  suspend fun deletePost(@Path("id") id: String): String
 }
