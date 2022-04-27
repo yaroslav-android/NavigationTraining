@@ -10,7 +10,7 @@ import team.uptech.training.navigation.data.model.PostPreviewNetwork
 interface PostApi {
 
   @GET("post")
- suspend fun getPosts(): DataList<PostPreviewNetwork>
+  suspend fun getPosts(): DataList<PostPreviewNetwork>
 
   @GET("user/{id}/post")
   suspend fun getPostsByUser(@Path("id") id: String): DataList<PostPreviewNetwork>
